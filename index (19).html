@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Hind+Siliguri:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Hind Siliguri', sans-serif;
+            overflow-x: hidden;
+            background-color: #ffe4e1;
+        }
+
+        .page {
+            display: none;
+            height: 100vh;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+        }
+
+        .active { display: flex; }
+
+        /* Page 1 */
+        #page1 { background-color: #ffe4e1; }
+        .romantic-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #d63384;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn-red { background-color: #ff4d4d; }
+        .btn-green { background-color: #28a745; margin-top: 20px; }
+        .btn-blue { background-color: #007bff; margin-top: 20px; }
+        .btn-purple { background-color: #6f42c1; margin-top: 20px; }
+
+        /* Page 2: Envelope & Letter */
+        #page2 { background-color: #fff0f5; }
+        .envelope-wrapper {
+            position: relative;
+            width: 280px;
+            height: 180px;
+            background: #fff;
+            border: 2px solid #ddd;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .seal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        .letter {
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 90%;
+            height: 0%;
+            background: white;
+            padding: 0px;
+            overflow: hidden;
+            transition: all 1s ease;
+            font-size: 0.9rem;
+            text-align: left;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            z-index: 5;
+        }
+        .letter.open {
+            height: 450px;
+            bottom: 100px;
+            padding: 15px;
+            overflow-y: scroll;
+        }
+
+        /* Page 3: Memories */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .img-box {
+            width: 140px;
+            height: 140px;
+            background: #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            cursor: pointer;
+            border: 2px solid #87ceeb;
+        }
+
+        /* Page 4 */
+        .urdu { font-size: 1.5rem; color: #555; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="page active">
+        <h1 class="romantic-text">Happy Valentine Day Dear🫶</h1>
+        <button class="btn btn-red" onclick="showPage('page2')">OPEN MY HEART🫀</button>
+    </div>
+
+    <div id="page2" class="page">
+        <h2 style="color: #d63384;">অলিন্দে স্বাগতম আগে লাভে চাপ দাও🙂</h2>
+        <div class="envelope-wrapper">
+            <div class="seal" onclick="openLetter()">❤️</div>
+            <div id="letter" class="letter">
+                <p><strong>পিও,</strong><br><br>
+                আশা করি পরতেছো☠️। শুরুতে রাগইলাম যাতে চিঠিটা রাগ নিয়া পরো পরে খুশি হয়ে যাও। তো তোমারে আবার কিসের উইশ করবো।তুমি তো সকল উইশের উর্ধে। সত্যি কইতে তুমি আমার বাড়ির খাবারের মতো। এমনেই স্বাস্থকর। তাই বেশি ভংচং করতে মন চায় না তোমার লগে। জীবনের সাথে মিশে গেলে যা হয় আর কী।তাও কিছু কথা বলা উচিত।<br><br>
+                তুমি আমার জীবনে আসছো একটা আলো হয়ে।আমি যে আমার মা বাবার পরে আরো কারো কাছে স্পেশাল হতে পারি তা তুমি জানাইছো আমারে।আসার কথার যে কিছু গুরুত্ব আছে তা তুমি বুঝাইসো আমারে।আবার নিজেকে বেশি গুরুত্বপূর্ণ ভাবা যাবেনা এটাও বুঝাইসো।মানে সবই করসো ওইযে কইলাম স্বাস্থকর খাবারের মতো আরকী।তোমার রাগ ভাঙাতে আমার বেশি খাটতে হয় না এটা আমি মনে করি আমার জন্য ব্লেসিং। তুমি এতোটাই নিরামিষ যে এতো কম বয়সে টাকার হিসেব করো।সুতোং সবকিছু মিলায়ে তোমাকে পেয়ে আমি নিজেকে ভাগ্যবান মনে করি।আবার তোমারে জ্বালাতে পেরে আনন্দিত বোধ ও করি☠️।<br><br>
+                তুমি যে কতোটা ভালো তুমি নিজেই জানো না।<br>
+                আল্লাহ এই ভালোমানুষ কে সম্পুর্ণভাবে হালাল করে দিক আমার জন্য।<br><br>
+                পরিশেষে একটা কথাই কইবো <br>
+                <strong>তোমার সরলতা কে ভালোবাসি।</strong></p> 
+            </div>
+        </div>
+        <button class="btn btn-green" onclick="showPage('page3')">নিলয়ে চলো</button>
+    </div>
+
+    <div id="page3" class="page" style="background-color: #f0f8ff;">
+        <button class="btn btn-blue" onclick="showMemories()">স্মৃতিচারণ</button>
+<div id="gallery" class="gallery" style="display: none;">
+    
+    <div class="img-box" onclick="alert('প্রথম পেছন থেকে জরিয়ে ধরা🐸')">
+        <img src="img1.png" alt="Memory 1" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+    </div>
+
+    <div class="img-box" onclick="alert('তোমার বেকার থাকাকালীন শেষ কাপল পিক🫢')">
+        <img src="img2.png" alt="Memory 2" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+    </div>
+
+    <div class="img-box" onclick="alert('তুমি দেখতেছিলা মানাবে কি না😗')">
+        <img src="img3.png" alt="Memory 3" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+    </div>
+
+    <div class="img-box" onclick="alert('ফেত্তুনির মতো দুইজন🫢')">
+        <img src="img4.png" alt="Memory 4" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+    </div>
+
+    <div class="img-box" onclick="alert('চুল কাইটা কী বাজে অবস্থা ছিলো🤧।')">
+        <img src="img5.png" alt="Memory 5" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+    </div>
+
+    <div class="img-box" onclick="alert('সবসময়ের এমনেই পাশে থেকো।')">
+        <img src="img6.png" alt="Memory 6" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+    </div>
+<p><strong> প্রতিটি ছবিতে ক্লিক করো🫶</strong>
+    </p>
+
+</div>
+
+        <button class="btn btn-purple" onclick="showPage('page4')">শেষ পাতা</button>
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+    
+</audio>
+
+    </div>
+
+    <div id="page4" class="page" style="background-color: #fff;">
+        <p class="urdu">"عشق نے کافی نکما کر دیا ورنہ ہم بھی آدمی تھے کام کے"</p>
+        <p><i>"ইশক নে কাফি কো নিকাম্মা কর দিয়া, ওয়ারনা হাম ভি আদমি থে কাম কে।"</i></p>
+        <p>(ভালবাসা কাফি কে অলস করে দিয়েছে, নইলে সেও ছিল কাজের মানুষ।)</p>
+        <br>
+        <h3 style="color: #6f42c1;">ধন্যবাদ আবার আসবেন🫢</h3>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            // Show target page
+            document.getElementById(pageId).classList.add('active');
+
+            // Audio Control
+            let music = document.getElementById('bgMusic');
+            if(pageId === 'page3') {
+                music.play();
+            } else if(pageId === 'page4') {
+                music.pause();
+            }
+        }
+
+        function openLetter() {
+            document.getElementById('letter').classList.add('open');
+        }
+
+        function showMemories() {
+            document.getElementById('gallery').style.display = 'grid';
+        }
+    </script>
+</body>
+</html>
